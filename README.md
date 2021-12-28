@@ -6,7 +6,6 @@ custom dwm commit
 
 * xsetroot
 * pamixer
-* cmus
 * networkmanager
 * networkmanager-openvpn
 
@@ -18,13 +17,25 @@ compile suckless software under ~/.dwm
 
 `sudo make clean install`
 
-## demenu-items
+## directory hierarchy
+
+- $HOME
+  - .dwm
+    - dmenu
+    - dmenu-items
+    - dwm
+    - dwm-bar
+    - st
+    - autostart.sh
+## dmenu-items
 
 `ls -c /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
 
-## autostart
+## autorun
 
 `chmod +x $HOME/.dwm/autostart.sh`
+
+`chmod +x $HOME/.dwm/dwm-bar/dwm_bar.sh`
 
 ## xsession
 
