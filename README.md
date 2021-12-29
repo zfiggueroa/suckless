@@ -23,7 +23,7 @@ Custom [dwm](https://dwm.suckless.org/) install ready to build, this follows the
 
 add new item (symlink):
 
-`$ ls -c /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
+`$ ln -s /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
 ## AUTORUN
 `$ chmod +x $HOME/.dwm/autostart.sh`
 
