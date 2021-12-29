@@ -36,17 +36,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class    instance	title	mask	switch	isfloating	monitor	x,y,w,h		floatborderpx*/
-	{ "Pcmanfm",	NULL,	NULL,	1 << 1,	1,		1,			 0, 		160,135,1050,500,	5},
-	{ "feh",		NULL,	NULL,	1 << 1,	1,		0,			-1 },
-	{ "st",	NULL, "cmus v2.9.1",	1 << 2, 1,		1,			-1 },
-	{ "mpv",		NULL,	NULL,	1 << 3,	1,		1,			-1 },
+	/* class instance	title	mask	switch		isfloating		monitor*/
+	{ "Pcmanfm",	NULL,	NULL,	1 << 1,	1,		0,			 0 },
+	{ "feh",	NULL,	NULL,	1 << 1,	1,		0,			-1 },
+	{ "st",	NULL, "cmus v2.9.1",	1 << 2, 1,		0,			-1 },
+	{ "mpv",	NULL,	NULL,	1 << 3,	1,		1,			 0 },
 	{ "retroarch",	NULL,	NULL,	1 << 4, 1,		0,			-1 },
-	{ NULL,	"Steam",		NULL,	1 << 4, 0,		0,			 0 },
+	{ NULL,		"Steam",NULL,	1 << 4, 0,		0,			 0 },
 	{ "firefox",	NULL,	NULL,	1 << 5,	1,		0,			 0 },
-	{ NULL,	"geany",		NULL,	1 << 6,	1,		0,			 0 },
-	{ NULL,	NULL, "BleachBit",		1 << 6, 1,		0,			-1 },
-	{ "st",	"st",	"st",			2 << 7,	1,		0,			 0 },
+	{ NULL,	"geany",	NULL,	1 << 6,	1,		0,			 0 },
+	{ NULL,	NULL, "BleachBit",	1 << 6, 1,		0,			-1 },
+	{ "st",	"st",	"st",		2 << 7,	1,		0,			 0 },
 };
 
 /* layout(s) */
@@ -135,4 +135,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
