@@ -21,7 +21,7 @@ Custom [dwm](https://dwm.suckless.org/) install ready to build, this follows the
 ## DMENU-ITEMS
 > **Dmenu wil only fetch items inside `$HOME/.dwm/dmenu-items` it will prevent dmenu from catching all bins on the system, this was intended to achieve a better menu experience, to change this behavior edit `$HOME/.dwm/dmenu/dmenu_path`**
 
-add symlink:
+add new item (symlink):
 
 `$ ls -c /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
 ## AUTORUN
