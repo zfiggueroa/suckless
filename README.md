@@ -1,24 +1,15 @@
-## dwm-patched
-
-custom dwm commit
-
-## dependencies
-
+## DESCRIPTION
+Custom [dwm](https://dwm.suckless.org/) install ready to build, this follows the suckless [philosophy](https://suckless.org/philosophy/) so you have to manually install its components.
+## DEPENDENCIES
 * xsetroot
 * pamixer
 * networkmanager
 * networkmanager-openvpn
+## MAKE
+`$ sudo cp config.diff.h config.h`
 
-## install
-
-compile suckless software under ~/.dwm
-
-`sudo cp config.diff.h config.h`
-
-`sudo make clean install`
-
-## directory hierarchy
-
+`$ sudo make clean install`
+## FILE HIERARCHY
 - $HOME
   - .dwm
     - dmenu
@@ -27,18 +18,17 @@ compile suckless software under ~/.dwm
     - dwm-bar
     - st
     - autostart.sh
-## dmenu-items
+## DMENU-ITEMS
+> **Dmenu wil only fetch items inside `$HOME/.dwm/dmenu-items` it will prevent dmenu from catching all bins on the system, this was intended to achieve a better menu experience, to change this behavior edit `$HOME/.dwm/dmenu/dmenu_path`**
 
-`ls -c /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
+add symlink:
 
-## autorun
+`$ ls -c /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
+## AUTORUN
+`$ chmod +x $HOME/.dwm/autostart.sh`
 
-`chmod +x $HOME/.dwm/autostart.sh`
-
-`chmod +x $HOME/.dwm/dwm-bar/dwm_bar.sh`
-
-## xsession
-
+`$ chmod +x $HOME/.dwm/dwm-bar/dwm_bar.sh`
+## XSESSION
 `/usr/share/xsessions/dwm-session.desktop`
 
 ```
@@ -50,15 +40,15 @@ Exec=/$HOME/.dwm/autostart.sh
 Icon=dwm
 Type=XSession
 ```
-### patches included
+## PATCHES
 
-> dmenu
+### dmenu
 
 [dmenu-grid-4.9.diff](https://tools.suckless.org/dmenu/patches/grid/dmenu-grid-4.9.diff)
 
 [dmenu-center-20200111-8cd37e1.diff](https://tools.suckless.org/dmenu/patches/center/dmenu-center-20200111-8cd37e1.diff)
 
-> dwm
+### dwm
 
 [dwm-notitle-6.2.diff](https://dwm.suckless.org/patches/notitle/dwm-notitle-6.2.diff)
 
@@ -70,6 +60,6 @@ Type=XSession
 
 [dwm-floatrules-20210801-138b405.diff](https://dwm.suckless.org/patches/floatrules/dwm-floatrules-20210801-138b405.diff)
 
-> st
+### st
 
 [st-iso14755-0.8.3.diff](https://st.suckless.org/patches/iso14755/st-iso14755-0.8.3.diff)
