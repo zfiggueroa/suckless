@@ -3,7 +3,7 @@
 ~/.fehbg &
 
 # dwmblocks
-export PATH="$PATH:$HOME/.dwm/blocks"
+export PATH="$PATH:$HOME/.dwm/modules"
 dwmblocks &
 
 # st
