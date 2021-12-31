@@ -13,8 +13,6 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 1;       /* vertical padding of bar */
-static const int sidepad            = 5;       /* horizontal padding of bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -36,17 +34,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class instance	title	mask	switch		isfloating		monitor*/
-	{ "Pcmanfm",	NULL,	NULL,	1 << 1,	1,		0,			 0 },
-	{ "feh",	NULL,	NULL,	1 << 1,	1,		0,			-1 },
-	{ "st",	NULL, "cmus v2.9.1",	1 << 2, 1,		0,			-1 },
-	{ "mpv",	NULL,	NULL,	1 << 3,	1,		1,			 0 },
-	{ "retroarch",	NULL,	NULL,	1 << 4, 1,		0,			-1 },
-	{ NULL,		"Steam",NULL,	1 << 4, 0,		0,			 0 },
-	{ "firefox",	NULL,	NULL,	1 << 5,	1,		0,			 0 },
-	{ NULL,	"geany",	NULL,	1 << 6,	1,		0,			 0 },
-	{ NULL,	NULL, "BleachBit",	1 << 6, 1,		0,			-1 },
-	{ "st",	"st",	"st",		2 << 7,	1,		0,			 0 },
+	/* class		instance	title			mask	switch	isfloating	 monitor*/
+	{ "Pcmanfm",	NULL,		NULL,			1 << 1,	1,		0,			 0 },
+	{ "feh",		NULL,		NULL,			1 << 1,	1,		0,			-1 },
+	{ "st",			NULL, 		"cmus v2.9.1",	1 << 2, 1,		0,			-1 },
+	{ "mpv",		NULL,		NULL,			1 << 3,	1,		1,			 0 },
+	{ "retroarch",	NULL,		NULL,			1 << 4, 1,		0,			-1 },
+	{ NULL,			"Steam",	NULL,			1 << 4, 0,		0,			 0 },
+	{ "firefox",	NULL,		NULL,			1 << 5,	1,		0,			 0 },
+	{ NULL,			"geany",	NULL,			1 << 6,	1,		0,			 0 },
+	{ NULL,			NULL, 		"BleachBit",	1 << 6, 1,		0,			-1 },
+	{ "st",			"st",		"st",			2 << 7,	1,		0,			 0 },
 };
 
 /* layout(s) */
@@ -56,9 +54,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "|",      tile },    /* first entry is default */
+	{ "-",      NULL },    /* no layout function means floating behavior */
+	{ "m",      monocle },
 };
 
 /* key definitions */
