@@ -5,12 +5,9 @@ cache="$cachedir/dmenu_run"
 
 [ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 
-# $CPATH replaces $PATH env
-CPATH="$HOME/.dwm/dmenu-items"
-
 IFS=:
-if stest -dqr -n "$cache" $CPATH; then
-	stest -flx $CPATH | sort -u | tee "$cache"
+if stest -dqr -n "$cache" $PATH; then
+	stest -flx $PATH | sort -u | tee "$cache"
 else
 	cat "$cache"
 fi
