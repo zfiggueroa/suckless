@@ -3,10 +3,7 @@ Custom [dwm](https://dwm.suckless.org/) window manager install ready to build, t
 ## DEPENDENCIES
 * xsetroot
 * pamixer
-* networkmanager
-* networkmanager-openvpn
 * ttf-font-awesome
-* bash (moved from sh to bash)
 ## MAKE
 `$ sudo cp config.diff.h config.h`
 
