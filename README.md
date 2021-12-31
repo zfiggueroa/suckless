@@ -1,10 +1,11 @@
 ## DESCRIPTION
-Custom [dwm](https://dwm.suckless.org/) install ready to build, this follows the suckless [philosophy](https://suckless.org/philosophy/) so you have to manually install its components.
+Custom [dwm](https://dwm.suckless.org/) window manager install ready to build, this follows the suckless [philosophy](https://suckless.org/philosophy/) so you have to manually compile its components.
 ## DEPENDENCIES
 * xsetroot
 * pamixer
 * networkmanager
 * networkmanager-openvpn
+* ttf-font-awesome ([icons](https://fontawesome.com/v6.0/icons))
 ## MAKE
 `$ sudo cp config.diff.h config.h`
 
