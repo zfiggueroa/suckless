@@ -1,35 +1,18 @@
 ## DESCRIPTION
-Custom [dwm](https://dwm.suckless.org/) window manager install ready to build, this follows the suckless [philosophy](https://suckless.org/philosophy/) so you have to manually compile its components.
+Custom [dwm](https://dwm.suckless.org/) window manager fully patched and ready to build.
 ## DEPENDENCIES
 * xsetroot
 * pamixer
 * ttf-font-awesome
-## MAKE
-`$ sudo cp config.diff.h config.h`
-
-`$ sudo make clean install`
-## FILE HIERARCHY
-- $HOME
-  - .dwm
-    - dmenu
-    - dmenu-items
-    - dwm
-    - dwm-bar
-    - st
-    - autostart.sh
-## DMENU-ITEMS
-> **Dmenu wil only fetch items inside `$HOME/.dwm/dmenu-items` it will prevent dmenu from catching all bins on the system, this was intended to achieve a better menu experience, to change this behavior edit `$HOME/.dwm/dmenu/dmenu_path`**
-
-add new item (symlink):
-
-`$ ln -s /usr/bin/mybin $HOME/.dwm/dmenu-items/mybin`
-## AUTORUN
-`$ chmod +x $HOME/.dwm/autostart.sh`
-
-`$ chmod +x $HOME/.dwm/dwm-bar/dwm_bar.sh`
+* any display manager ([ly](https://aur.archlinux.org/packages/ly/) suggested)
+## INSTALLATION
+Download `install.sh` [here](https://raw.githubusercontent.com/zfiggueroa/dwm-patched/main/install.sh) and execute it as root `$ sudo sh install.sh`
+## MANUAL (OPTIONAL)
+If you want to manually install dwm, open `install.sh` on a text editor and follow the steps.
 ## XSESSION
-`/usr/share/xsessions/dwm-session.desktop`
+We need to create a xsession in order to start dwm using a display manager.
 
+`/usr/share/xsessions/dwm-session.desktop`
 ```
 [Desktop Entry]
 Encoding=UTF-8
@@ -50,9 +33,12 @@ Type=XSession
 
 [dwm-fullgaps-6.2.diff](https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff)
 
-[dwm-barpadding-6.2.diff](https://dwm.suckless.org/patches/barpadding/dwm-barpadding-6.2.diff)
+[dwm-status2d-6.2.diff](https://dwm.suckless.org/patches/status2d/dwm-status2d-6.2.diff)
 
 [dwm-switchtotag-6.2.diff](https://dwm.suckless.org/patches/switchtotag/dwm-switchtotag-6.2.diff)
+
+### dwmblocks
+[dwmblocks-statuscmd-b6b0be4.diff](https://gist.githubusercontent.com/IGeraGera/e4a5583b91b3eec2e81fdceb44dea717/raw/c835582ad8c47a3b8dddb33925aed8cc16cf87e7/dwmblocks-statuscmd-b6b0be4.diff)
 
 ### st
 [st-iso14755-0.8.3.diff](https://st.suckless.org/patches/iso14755/st-iso14755-0.8.3.diff)
