@@ -22,6 +22,7 @@ Exec=/$HOME/.dwm/autostart.sh
 Icon=dwm
 Type=XSession
 ```
+Since `autostart.sh` its executing dwm on xsession start, if you kill dwm (shit+modkey+Q) you are going to be returned into the display manager causing X display issues (crashes).
 ## PATCHES
 ### dmenu
 [dmenu-grid-4.9.diff](https://tools.suckless.org/dmenu/patches/grid/dmenu-grid-4.9.diff)
