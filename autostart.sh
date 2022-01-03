@@ -1,19 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 # wallpaper
 ~/.fehbg &
 
 # dwmblocks
-export PATH="$PATH:$HOME/.dwm/modules"
-dwmblocks &
+export PATH="$PATH:$HOME/.dwm/modules"; dwmblocks &
 
 # st
-/usr/local/bin/st -e /bin/bash --login &
+/usr/local/bin/st -e /bin/sh --login &
 
 # fm
-#pcmanfm &
+pcmanfm &
 
 # numlock
 numlockx &
+
+# loop
+#while true; do
+#	dwm 2>/dev/null
+#done
 
 # dwm
 exec dwm
