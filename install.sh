@@ -1,8 +1,8 @@
 #/bin/sh
 
 # download files
-mkdir -p $HOME/.dwm; cd $HOME/.dwm
-git clone https://github.com/zfiggueroa/dwm-patched; clear
+cd $HOME/; git clone https://github.com/zfiggueroa/dwm-patched; clear
+mv $HOME/dwm-patched $HOME/.dwm; rm -rf $HOME/.dwm/.git/
 
 # dwm
 cd $HOME/.dwm/dwm
@@ -28,4 +28,4 @@ sudo make clean install
 chmod -R +x $HOME/.dwm/modules/*
 
 # autorun
-chmod +x $HOME/.dwm/autostart.sh
+chmod +x $HOME/.dwm/autostart
