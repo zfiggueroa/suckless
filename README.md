@@ -1,5 +1,8 @@
 ## DESCRIPTION
 Custom [dwm](https://dwm.suckless.org/) window manager fully patched and ready to build.
+## SCREENSHOT
+![alt text](https://i.ibb.co/ncsWczB/Screenshot-2022-01-04-21-01-45.png)
+[background](https://www.deviantart.com/caitaron/art/Holy-night-Narmaya-824000607)
 ## DEPENDENCIES
 * xsetroot
 * pamixer
