@@ -38,8 +38,5 @@ Since `autostart` by default its executing dwm on xsession start, if you kill dw
 
 [dwm-switchtotag-6.2.diff](https://dwm.suckless.org/patches/switchtotag/dwm-switchtotag-6.2.diff)
 
-### dwmblocks
-[dwmblocks-statuscmd-b6b0be4.diff](https://gist.githubusercontent.com/IGeraGera/e4a5583b91b3eec2e81fdceb44dea717/raw/c835582ad8c47a3b8dddb33925aed8cc16cf87e7/dwmblocks-statuscmd-b6b0be4.diff)
-
 ### st
 [st-iso14755-0.8.3.diff](https://st.suckless.org/patches/iso14755/st-iso14755-0.8.3.diff)
