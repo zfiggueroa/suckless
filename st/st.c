@@ -380,7 +380,7 @@ base64dec_getc(const char **src)
 {
 	while (**src && !isprint(**src))
 		(*src)++;
-	return **src ? *((*src)++) : '=';  /* emulate padding if string ends */
+	return **src ? *((*src)++) : '=';	/* emulate padding if string ends */
 }
 
 char *
