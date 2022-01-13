@@ -48,5 +48,12 @@ exec dwm
 
 [dwm-switchtotag-6.2.diff](https://dwm.suckless.org/patches/switchtotag/dwm-switchtotag-6.2.diff)
 
-### st 0.8.4
-[st-iso14755-0.8.3.diff](https://st.suckless.org/patches/iso14755/st-iso14755-0.8.3.diff)
+### st 0.8.5
+[st-blinking_cursor-20211116-2f6e597](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff)
+
+[st-iso14755-20180911-67d0cb6.diff](https://st.suckless.org/patches/iso14755/st-iso14755-20180911-67d0cb6.diff)
+
+[st-nordtheme-0.8.2.diff](https://st.suckless.org/patches/nordtheme/st-nordtheme-0.8.2.diff)
+
+[st-scrollback-20210507-4536f46.diff](https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff)
+
