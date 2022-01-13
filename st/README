@@ -2,11 +2,9 @@ st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
 
-
 Requirements
 ------------
 In order to build st you need the Xlib header files.
-
 
 Installation
 ------------
@@ -17,7 +15,6 @@ Afterwards enter the following command to build and install st (if
 necessary as root):
 
     make clean install
-
 
 Running st
 ----------
