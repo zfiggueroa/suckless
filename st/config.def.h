@@ -60,7 +60,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 500;
 
 /*
  * thickness of underline and bar cursors
@@ -120,6 +120,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#2e3440", /* background */
 	"#d8dee9", /* foreground */
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
 
 
@@ -129,17 +131,24 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-static unsigned int defaultcs = 257;
+unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 256;
 
 /*
- * Default shape of cursor
- * 2: Block ("█")
- * 4: Underline ("_")
- * 6: Bar ("|")
- * 7: Snowman ("☃")
+ * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
+ * Default style of cursor
+ * 0: blinking block
+ * 1: blinking block (default)
+ * 2: steady block ("█")
+ * 3: blinking underline
+ * 4: steady underline ("_")
+ * 5: blinking bar
+ * 6: steady bar ("|")
+ * 7: blinking st cursor
+ * 8: steady st cursor
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorstyle = 3;
+static Rune stcursor = 0x2603; /* snowman ("☃") */
 
 /*
  * Default columns and rows numbers
@@ -169,21 +178,16 @@ static unsigned int defaultattr = 11;
 static uint forcemousemod = ShiftMask;
 
 /*
- * Command used to query unicode glyphs.
- */
-char *iso14755_cmd = "dmenu -w \"$WINDOWID\" -p codepoint: </dev/null";
-
-/*
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
 static MouseShortcut mshortcuts[] = {
-	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
-	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
-	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
-	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
-	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
+	/* mask			button	 function	argument	   release */
+	{ XK_ANY_MOD,	Button2, selpaste,	{.i = 0},      1 },
+	{ ShiftMask,	Button4, ttysend,	{.s = "\033[5;2~"} },
+	{ XK_ANY_MOD,	Button4, ttysend,	{.s = "\031"} },
+	{ ShiftMask,	Button5, ttysend,	{.s = "\033[6;2~"} },
+	{ XK_ANY_MOD,	Button5, ttysend,	{.s = "\005"} },
 };
 
 /* Internal keyboard shortcuts. */
@@ -191,20 +195,22 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
-	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_U,           iso14755,       {.i =  0} },
+	/* mask			keysym			function		argument */
+	{ XK_ANY_MOD,	XK_Break,		sendbreak,		{.i =  0} },
+	{ ControlMask,	XK_Print,		toggleprinter,	{.i =  0} },
+	{ ShiftMask,	XK_Print,		printscreen,	{.i =  0} },
+	{ XK_ANY_MOD,	XK_Print,		printsel,		{.i =  0} },
+	{ TERMMOD,		XK_Prior,		zoom,			{.f = +1} },
+	{ TERMMOD,		XK_Next,		zoom,			{.f = -1} },
+	{ TERMMOD,		XK_Home,		zoomreset,		{.f =  0} },
+	{ TERMMOD,		XK_C,			clipcopy,		{.i =  0} },
+	{ TERMMOD,		XK_V,			clippaste,		{.i =  0} },
+	{ TERMMOD,		XK_Y,			selpaste,		{.i =  0} },
+	{ ShiftMask,	XK_Insert,		selpaste,		{.i =  0} },
+	{ TERMMOD,		XK_Num_Lock,	numlock,		{.i =  0} },
+	{ TERMMOD,		XK_U,			iso14755,		{.i =  0} },
+	{ ShiftMask,	XK_Page_Up,		kscrollup,		{.i = -1} },
+	{ ShiftMask,	XK_Page_Down,	kscrolldown,	{.i = -1} },
 };
 
 /*
