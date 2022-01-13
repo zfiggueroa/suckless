@@ -20,7 +20,7 @@ enum win_mode {
 	MODE_BRCKTPASTE  = 1 << 16,
 	MODE_NUMLOCK     = 1 << 17,
 	MODE_MOUSE       = MODE_MOUSEBTN|MODE_MOUSEMOTION|MODE_MOUSEX10\
-	                  |MODE_MOUSEMANY,
+					  |MODE_MOUSEMANY,
 };
 
 void xbell(void);
@@ -30,6 +30,7 @@ void xdrawline(Line, int, int, int);
 void xfinishdraw(void);
 void xloadcols(void);
 int xsetcolorname(int, const char *);
+void xseticontitle(char *);
 void xsettitle(char *);
 int xsetcursor(int);
 void xsetmode(int, unsigned int);
