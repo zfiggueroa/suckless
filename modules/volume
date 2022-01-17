@@ -1,6 +1,14 @@
 #!/bin/sh
+source colors
+
+case $BLOCK_BUTTON in
+	1) pamixer -t; kill -39 $(pidof dwmblocks);;
+	2) st -e vim $0;;
+	3) notify-send -t 5000 "$(pamixer --list-sinks | awk '{print $3,$4,$5,$6,$2}')";;
+esac
+
 # mute
-[ $(pamixer --get-mute) = true ] && printf " ^c#e83333^[mute]^c#bbbbbb^\n" && exit
+[ $(pamixer --get-mute) = true ] && printf "$red mute $white" && exit
 
 # volume
 vol="$(pamixer --get-volume)"
@@ -10,7 +18,7 @@ elif [ "$vol" -gt "30" ]; then
 	icon=""
 elif [ "$vol" -gt "0"  ]; then
 	icon=""
-else
-	printf " ^c#e83333^$vol"%%"^c#bbbbbb^\n" && exit
+elif [ "$vol" -le "0"  ]; then
+	icon=""
 fi
-	printf "$icon ^c#e83333^$vol"%%"^c#bbbbbb^%\n"
+	printf "%s$red %s%% $white" "$icon" "$vol"
