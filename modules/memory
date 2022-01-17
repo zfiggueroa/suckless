@@ -1,3 +1,7 @@
 #!/bin/sh
-free=$(free -h | grep Mem); memu=$(echo $free | awk '{print $3}'); memt=$(echo $free | awk '{print $2}')
-printf "|  MEM ^c#33bbe8^%s/%s^c#bbbbbb^\n" "$memu" "$memt"
+source colors
+printf " $blue$(free -h | grep Mem | awk '{print $3"/"$2}')$white"
+
+case $BLOCK_BUTTON in
+	2) st -e vim $0;;
+esac
