@@ -1,2 +1,9 @@
 #!/bin/sh
-printf "$(newsboat -x reload print-unread | awk '{ if($1>0) print " " $1}')\n"
+
+case $BLOCK_BUTTON in
+	1) notify-send -t 1000 "updating news..."; kill -38 $(pidof dwmblocks);;
+	2) st -e vim $0;;
+	3) st -e newsboat;;
+esac
+
+printf "$(newsboat -x reload print-unread | awk '{ if($1>0) print " " $1}')\n"
