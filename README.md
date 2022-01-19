@@ -25,6 +25,8 @@ Exec=/$HOME/.dwm/autostart
 Icon=dwm
 Type=XSession
 ```
+*recommended to install a [TUI display manager](https://github.com/nullgemm/ly) to keep a minimal desktop experience*
+
 ## XINITRC
 If you want to start dwm using `xorg-xinit` instead of a display manager edit your run command script.
 
