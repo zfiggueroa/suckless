@@ -1,4 +1,4 @@
-/* See LICENSE file for copyright and license details. */
+// See LICENSE file for copyright and license details.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -139,11 +139,11 @@ xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
 	 * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916349
 	 * and lots more all over the internet.
 	 */
-	FcBool iscol;
+	/*FcBool iscol;
 	if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
 		XftFontClose(drw->dpy, xfont);
 		return NULL;
-	}
+	}*/
 
 	font = ecalloc(1, sizeof(Fnt));
 	font->xfont = xfont;
@@ -212,7 +212,7 @@ drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)
 	size_t i;
 	Clr *ret;
 
-	/* need at least two colors for a scheme */
+	// need at least two colors for a scheme
 	if (!drw || !clrnames || clrcount < 2 || !(ret = ecalloc(clrcount, sizeof(XftColor))))
 		return NULL;
 
@@ -308,7 +308,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 
 		if (utf8strlen) {
 			drw_font_getexts(usedfont, utf8str, utf8strlen, &ew, NULL);
-			/* shorten text if necessary */
+			// shorten text if necessary
 			for (len = MIN(utf8strlen, sizeof(buf) - 1); len && ew > w; len--)
 				drw_font_getexts(usedfont, utf8str, len, &ew, NULL);
 
@@ -317,7 +317,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 				buf[len] = '\0';
 				if (len < utf8strlen)
 					for (i = len; i && i > len - 3; buf[--i] = '.')
-						; /* NOP */
+						; // NOP
 
 				if (render) {
 					ty = y + (h - usedfont->h) / 2 + usedfont->xfont->ascent;
@@ -343,7 +343,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 			FcCharSetAddChar(fccharset, utf8codepoint);
 
 			if (!drw->fonts->pattern) {
-				/* Refer to the comment in xfont_create for more information. */
+				// Refer to the comment in xfont_create for more information.
 				die("the first font in the cache must be loaded from a font string.");
 			}
 
