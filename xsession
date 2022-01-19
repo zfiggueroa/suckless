@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=dwm
 Comment=Dynamic window manager
-Exec=/$HOME/.dwm/autostart.sh
+Exec=/$HOME/.dwm/autostart
 Icon=dwm
 Type=XSession
