@@ -19,14 +19,14 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 
-/* scroll program: to enable use a string like "scroll" */
+// scroll program: to enable use a string like "scroll"
 char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
-/* identification sequence returned in DA and DECID */
+// identification sequence returned in DA and DECID
 char *vtiden = "\033[?6c";
 
-/* Kerning / character bounding-box multipliers */
+// Kerning / character bounding-box multipliers
 static float cwscale = 1.0;
 static float chscale = 1.0;
 
@@ -37,11 +37,11 @@ static float chscale = 1.0;
  */
 wchar_t *worddelimiters = L" ";
 
-/* selection timeouts (in milliseconds) */
+// selection timeouts (in milliseconds)
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
-/* alt screens */
+// alt screens
 int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
@@ -74,7 +74,7 @@ static unsigned int cursorthickness = 2;
  */
 static int bellvolume = 0;
 
-/* default TERM value */
+// default TERM value
 char *termname = "st";
 
 /*
@@ -94,35 +94,35 @@ char *termname = "st";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
+// Terminal colors (16 first used in escape sequence)
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#3b4252", /* black		*/
-	"#bf616a", /* red		*/
-	"#a3be8c", /* green		*/
-	"#ebcb8b", /* yellow	*/
-	"#81a1c1", /* blue		*/
-	"#b48ead", /* magenta	*/
-	"#88c0d0", /* cyan		*/
-	"#e5e9f0", /* white		*/
+	// normal colors
+	"#3b4252",
+	"#bf616a",
+	"#a3be8c",
+	"#ebcb8b",
+	"#81a1c1",
+	"#b48ead",
+	"#88c0d0",
+	"#e5e9f0",
 
-	/* 8 bright colors */
-	"#4c566a", /* black		*/
-	"#bf616a", /* red		*/
-	"#a3be8c", /* green		*/
-	"#ebcb8b", /* yellow	*/
-	"#81a1c1", /* blue		*/
-	"#b48ead", /* magenta	*/
-	"#8fbcbb", /* cyan		*/
-	"#eceff4", /* white		*/
+	// bright colors
+	"#4c566a",
+	"#bf616a",
+	"#a3be8c",
+	"#ebcb8b",
+	"#81a1c1",
+	"#b48ead",
+	"#8fbcbb",
+	"#eceff4",
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#2e3440",	/* background */
-	"#d8dee9",	/* foreground */
-	"gray90",	/* default foreground colour */
-	"black",	/* default background colour */
+	// more colors can be added after 255 to use with DefaultXX
+	"#2e3440",	// background
+	"#d8dee9",	// foreground
+	"gray90",	// default foreground colour
+	"black",	// default background colour
 };
 
 
@@ -149,7 +149,7 @@ static unsigned int defaultrcs = 256;
  * 8: steady st cursor
  */
 static unsigned int cursorstyle = 3;
-static Rune stcursor = 0x2603; /* snowman ("☃") */
+static Rune stcursor = 0x2603; // snowman ("☃")
 
 /*
  * Default columns and rows numbers
@@ -190,12 +190,12 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,	Button5, ttysend,	{.s = "\005"} 		},
 };
 
-/* Internal keyboard shortcuts. */
+// Internal keyboard shortcuts.
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
-	/* mask			keysym			function		argument */
+	// mask			keysym			function		argument
 	{ XK_ANY_MOD,	XK_Break,		sendbreak,		{.i =  0} },
 	{ ControlMask,	XK_Print,		toggleprinter,	{.i =  0} },
 	{ ShiftMask,	XK_Print,		printscreen,	{.i =  0} },
