@@ -15,7 +15,7 @@ sudo make clean install
 
 # dwmblocks
 cd $HOME/.dwm/dwmblocks
-sudo cp blocks.def.h blocks.h
+sudo cp config.def.h config.h
 sudo make clean install
 
 # st
@@ -33,4 +33,4 @@ sudo mv $HOME/.dwm/xsession /usr/share/xsessions/dwm-session.desktop
 chmod +x $HOME/.dwm/autostart
 
 # notify user
-notify-send -t 0 "dwm installation completed"
+notify-send -t 0 "suckless install completed"
