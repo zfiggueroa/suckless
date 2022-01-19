@@ -1,9 +1,9 @@
-/* See LICENSE for license details. */
+// See LICENSE for license details.
 
 #include <stdint.h>
 #include <sys/types.h>
 
-/* macros */
+// macros
 #define MIN(a, b)		((a) < (b) ? (a) : (b))
 #define MAX(a, b)		((a) < (b) ? (b) : (a))
 #define LEN(a)			(sizeof(a) / sizeof(a)[0])
@@ -61,10 +61,10 @@ typedef uint_least32_t Rune;
 
 #define Glyph Glyph_
 typedef struct {
-	Rune u;           /* character code */
-	ushort mode;      /* attribute flags */
-	uint32_t fg;      /* foreground  */
-	uint32_t bg;      /* background  */
+	Rune u;			// character code
+	ushort mode;	// attribute flags
+	uint32_t fg;	// foreground
+	uint32_t bg;	// background
 } Glyph;
 
 typedef Glyph *Line;
@@ -116,7 +116,7 @@ char *xstrdup(const char *);
 
 int xgetcolor(int x, unsigned char *r, unsigned char *g, unsigned char *b);
 
-/* config.h globals */
+// config.h globals
 extern char *utmp;
 extern char *scroll;
 extern char *stty_args;
