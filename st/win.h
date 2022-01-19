@@ -1,4 +1,4 @@
-/* See LICENSE for license details. */
+// See LICENSE for license details.
 
 enum win_mode {
 	MODE_VISIBLE     = 1 << 0,
