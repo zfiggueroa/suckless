@@ -4,7 +4,7 @@ Custom patched [suckless](https://suckless.org/) environment ready to build and 
 - [x] dmenu
 - [x] st
 - [x] dwmblocks
-- [x] status modules
+- [x] clickable modules
 - [ ] surf
 - [ ] tabs
 ## DEPENDENCIES
