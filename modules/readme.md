@@ -27,11 +27,11 @@ Modules made from scratch:
 		2) reduce the number of feeds inside '~/.newsboat/urls'
 		3) read '~/.newsboat/error.log' for more feedback
 ```
-⛔ **Known issue:** news module displays " Error:" when right clicking on it.<br/>
+⛔ **Known issue:** news module displays " Error:".<br/>
 ⚠️ **Cause:** 'Error: an instance of Newsboat is already running (PID: XXXX)'<br/>
 ✅ **Fix:**<br/>
 ```
-		1) Close other newsboat instances before '$ killall newsboat'
+		1) Close all newsboat instances or '$ killall newsboat'
 ```
 ## 💻 MEMORY USAGE
 **Name:** memory<br/>
