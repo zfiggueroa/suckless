@@ -1,9 +1,10 @@
 #!/bin/sh
+source resources
 
 case $BLOCK_BUTTON in
-	1) notify-send -t 1000 "updating news..."; kill -38 $(pidof dwmblocks);;
+	1) notify-send -t 3000 -i $wbag "collecting loot..."; kill -38 $(pidof dwmblocks);;
 	2) st -e vim $0;;
-	3) st -e newsboat;;
+	3) if pgrep -c newsboat > 0; then notify-send -u critical -i $warning "another instance of newsboat is already runing"; exit; else st -e newsboat ;fi;;
 esac
 
-printf "$(newsboat -x reload print-unread | awk '{ if($1>0) print " " $1}')\n"
+printf "$(newsboat -x reload print-unread | awk '{ if ($1 != "Error:" && -z $1) print " "$1}')\n"
