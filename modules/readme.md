@@ -15,24 +15,9 @@ Modules made from scratch:
 + Working
 ```
 **Usage:**<br/>
-* `Button1: update module`
+* `Button1: update news`
 * `Button2: edit module`
 * `Button3: open newsboat`
-
-⛔ **Known issue:** news module takes too long to update feeds.<br/>
-⚠️ **Cause:** newsboat is not loading feeds fast enough or there are too many feeds to update.<br/>
-✅ **Fix:**<br/>
-```
-		1) increase the number of threads newsboat loads at once 'reload-threads 10'
-		2) reduce the number of feeds inside '~/.newsboat/urls'
-		3) read '~/.newsboat/error.log' for more feedback
-```
-⛔ **Known issue:** news module displays " Error:".<br/>
-⚠️ **Cause:** 'Error: an instance of Newsboat is already running (PID: XXXX)'<br/>
-✅ **Fix:**<br/>
-```
-		1) Close all newsboat instances or '$ killall newsboat'
-```
 ## 💻 MEMORY USAGE
 **Name:** memory<br/>
 **Dependencies:** none<br/>
@@ -45,17 +30,17 @@ Modules made from scratch:
 * `Button2: edit module`
 * `Button3: n/a`
 
-## 🗓️ CALENDAR
-**Name:** clock<br/>
+## 🗓️ TIME & DATE
+**Name:** calendar<br/>
 **Dependencies:** none<br/>
 **Status:**<br/>
 ```diff
 + Working
 ```
 **Usage:**<br/>
-* `Button1: n/a`
+* `Button1: show timezone (timedatectl)`
 * `Button2: edit module`
-* `Button3: update module`
+* `Button3: show calendar`
 
 ## 📢 VOLUME
 **Name:** volume<br/>
