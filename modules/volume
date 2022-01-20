@@ -1,24 +1,22 @@
 #!/bin/sh
-source colors
+source resources
 
 case $BLOCK_BUTTON in
 	1) pamixer -t; kill -39 $(pidof dwmblocks);;
 	2) st -e vim $0;;
-	3) notify-send -t 5000 "$(pamixer --list-sinks | awk '{print $3,$4,$5,$6,$2}')";;
+	3) notify-send -t 5000 -i $sound "$(pamixer --list-sinks | xargs | awk '{print $(NF-3),$(NF-2),$(NF-1),$NF}')";;
 esac
 
-# mute
-[ $(pamixer --get-mute) = true ] && printf "$red mute $white" && exit
+# get-mute
+if [ $(pamixer --get-mute) = true ]; then printf " %s%s%s" "$red" "mute " "$white"; exit; fi
 
-# volume
-vol="$(pamixer --get-volume)"
-if   [ "$vol" -gt "70" ]; then
-	icon=""
-elif [ "$vol" -gt "30" ]; then
-	icon=""
-elif [ "$vol" -gt "0"  ]; then
-	icon=""
-elif [ "$vol" -le "0"  ]; then
-	icon=""
+# get-volume
+vol="$(pamixer --get-volume)"; if [$vol = ""]; then kill -39 $(pidof dwmblocks); exit; fi
+
+if   [ "$vol" -gt "70" ]; then icon=""
+elif [ "$vol" -gt "30" ]; then icon=""
+elif [ "$vol" -gt "0"  ]; then icon=""
+elif [ "$vol" -le "0"  ]; then icon=""
 fi
-	printf "%s$red %s%% $white" "$icon" "$vol"
+
+printf "%s %s%s %s" "$icon" "$red" "$vol%" "$white"
