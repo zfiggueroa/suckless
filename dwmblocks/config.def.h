@@ -3,7 +3,7 @@ const Block blocks[] = {
 	//BLOCK("nettraf",	1,		1),
 	BLOCK("news",		900,	2),
 	BLOCK("memory",		1,		3),
-	BLOCK("clock",		60,		4),
+	BLOCK("calendar",	60,		4),
 	BLOCK("volume",		0,		5),
 };
 
