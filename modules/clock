@@ -1,9 +1,0 @@
-#!/bin/sh
-
-case $BLOCK_BUTTON in
-	1) notify-send "left";;
-	2) st -e vim $0;;
-	3) kill -38 $(pidof dwmblocks);;
-esac
-
-printf " $(date "+%a %m.%d.%Y")  $(date "+%I:%M %p")\n"

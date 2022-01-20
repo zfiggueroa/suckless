@@ -1,0 +1,10 @@
+#!/bin/sh
+source resources
+
+case $BLOCK_BUTTON in
+	1) notify-send "$(timedatectl | grep 'Time zone' | xargs)";;
+	2) st -e vim $0;;
+	3) notify-send "$(cal)";;
+esac
+
+printf " %s%s%s |  %s%s%s" "$yellow" "$(date "+%a %m.%d.%Y")" "$white" "$green" "$(date "+%I:%M %p")" "$white"
