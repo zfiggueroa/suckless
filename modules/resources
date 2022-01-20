@@ -1,0 +1,17 @@
+# foreground colors
+
+			  red="^c#e8335a^"
+			white="^c#ffffff^"
+			 blue="^c#33cae8^"
+			green="^c#33e84e^"
+		   yellow="^c#e8e233^"
+		   purple="^c#6f33e8^"
+
+# dunst icons
+
+		calendar="$HOME/.config/dunst/icons/calendar.png"
+		newspaper="$HOME/.config/dunst/icons/newspaper.png"
+	 notification="$HOME/.config/dunst/icons/notification.png"
+			sound="$HOME/.config/dunst/icons/sound.png"
+		  warning="$HOME/.config/dunst/icons/warning.png"
+			 wbag="$HOME/.config/dunst/icons/wbag.png"
