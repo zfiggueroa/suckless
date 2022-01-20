@@ -2,7 +2,7 @@
 source resources
 
 case $BLOCK_BUTTON in
-	1) notify-send -t 3000 -i $wbag "collecting loot..."; kill -38 $(pidof dwmblocks);;
+	1) notify-send -t 1500 "updating news..."; kill -36 $(pidof dwmblocks);;
 	2) st -e vim $0;;
 	3) if pgrep -c newsboat > 0; then notify-send -u critical -i $warning "another instance of newsboat is already runing"; exit; else st -e newsboat ;fi;;
 esac
