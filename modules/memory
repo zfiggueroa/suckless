@@ -1,7 +1,8 @@
 #!/bin/sh
-source colors
-printf " $blue$(free -h | grep Mem | awk '{print $3"/"$2}')$white"
+source resources
 
 case $BLOCK_BUTTON in
 	2) st -e vim $0;;
 esac
+
+printf " %s%s%s" "$blue" "$(free -h | grep Mem | awk '{print $3"/"$2}')" "$white"
