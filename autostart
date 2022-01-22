@@ -5,10 +5,7 @@
 # dwmblocks
 export PATH="$PATH:$HOME/.dwm/modules"; dwmblocks &
 
-# notify daemon
-dunst &
-
-# fm
+# lf
 /usr/local/bin/st -e lf &
 
 # st
@@ -23,7 +20,7 @@ numlockx &
 #done
 
 # MOTD
-notify-send -t 10000 "$(printf 'Startup time: ' & systemd-analyze | awk '{print $16}')" &
+notify-send -t 10000 -u low "$(printf 'boot time: ' & systemd-analyze | awk '{print $16}')" &
 
 # dwm
 exec dwm
