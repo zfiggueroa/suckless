@@ -83,6 +83,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_F9,		spawn,			SHCMD("pamixer -t; kill -39 $(pidof dwmblocks)") },
 	{ MODKEY,				XK_F10,		spawn,			SHCMD("st -e cmus") },
 	{ MODKEY|ShiftMask,		XK_Return,	spawn,			SHCMD("st -e /bin/sh --login") },
+	{ 0,					XK_Print,	spawn,          SHCMD("coreshot") },
 	{ MODKEY,				XK_p,		spawn,			{.v = dmenucmd } },
 	{ MODKEY,				XK_b,		togglebar,		{0} },
 	{ MODKEY,				XK_j,		focusstack,		{.i = +1 } },
