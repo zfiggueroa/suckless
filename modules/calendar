@@ -7,4 +7,4 @@ case $BLOCK_BUTTON in
 	3) notify-send "$(cal)";;
 esac
 
-printf " %s%s%s |  %s%s%s" "$yellow" "$(date "+%a %m.%d.%Y")" "$white" "$green" "$(date "+%I:%M %p")" "$white"
+printf " %s%s%s |  %s%s%s" "$f_YL" "$(date "+%a %m.%d.%Y")" "$f_WT" "$f_GN" "$(date "+%I:%M %p")" "$f_WT"
