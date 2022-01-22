@@ -1,5 +1,11 @@
 #!/bin/sh
 
+case $BLOCK_BUTTON in
+	1) notify-send "Data downloaded:" $(cat /sys/class/net/[ew]*/statistics/rx_bytes | numfmt --to=iec);;
+	2) st -e vim $0;;
+	3) notify-send "network devices:" "$(lspci | egrep -i --color 'network|ethernet|wireless|wi-fi')";;
+esac
+
 update() {
     sum=0
     for arg; do
