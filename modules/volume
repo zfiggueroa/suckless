@@ -8,7 +8,7 @@ case $BLOCK_BUTTON in
 esac
 
 # get-mute
-if [ $(pamixer --get-mute) = true ]; then printf " %s%s%s" "$red" "mute " "$white"; exit; fi
+if [ $(pamixer --get-mute) = true ]; then printf " %s%s%s" "$f_RD" "mute " "$f_WT"; exit; fi
 
 # get-volume
 vol="$(pamixer --get-volume)"; if [$vol = ""]; then kill -39 $(pidof dwmblocks); exit; fi
@@ -19,4 +19,4 @@ elif [ "$vol" -gt "0"  ]; then icon=""
 elif [ "$vol" -le "0"  ]; then icon=""
 fi
 
-printf "%s %s%s %s" "$icon" "$red" "$vol%" "$white"
+printf "%s %s%s %s" "$icon" "$f_RD" "$vol%" "$f_WT"
