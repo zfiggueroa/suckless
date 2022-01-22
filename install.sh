@@ -24,7 +24,7 @@ sudo cp config.def.h config.h
 sudo make clean install
 
 # binaries
-cd $HOME/.dwm/modules/; ls | grep -v colors | grep -v readme.md | xargs -I {} chmod -R +x {}
+cd $HOME/.dwm/modules/; ls | grep -v resources | grep -v readme.md | xargs -I {} chmod -R +x {}
 
 # xsession
 sudo mv $HOME/.dwm/xsession /usr/share/xsessions/dwm-session.desktop
