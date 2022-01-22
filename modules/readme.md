@@ -26,9 +26,9 @@ Modules made from scratch:
 + Working
 ```
 **Usage:**<br/>
-* `Button1: n/a`
+* `Button1: open top`
 * `Button2: edit module`
-* `Button3: n/a`
+* `Button3: show free space`
 
 ## 🗓️ TIME & DATE
 **Name:** calendar<br/>
@@ -67,11 +67,11 @@ Modules made from scratch:
 **Dependencies:** none<br/>
 **Status:**<br/>
 ```diff
-- Ported
++ Ported
 ```
 **Usage:**<br/>
-* `Button1: n/a`
-* `Button2: n/a`
-* `Button3: n/a`
+* `Button1: downloaded data`
+* `Button2: edit module`
+* `Button3: network-devices`
 
 *Every other module integrated still 'work in progress', im rewriting every module from scratch for official support.*
