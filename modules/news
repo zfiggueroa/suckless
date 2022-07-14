@@ -4,7 +4,7 @@ source resources
 case $BLOCK_BUTTON in
 	1) notify-send -t 1500 "updating news..."; kill -36 $(pidof dwmblocks);;
 	2) st -e vim $0;;
-	3) if pgrep -c newsboat > 0; then notify-send -u critical -i $warning "another instance of newsboat is already runing"; exit; else st -e newsboat ;fi;;
+	3) if [[ $(pgrep -c newsboat) -gt 0 ]]; then notify-send -u critical -i $warning "newsboat is already runing"; exit; else st -e newsboat ;fi;;
 esac
 
-printf "$(newsboat -x reload print-unread | awk '{ if ($1 != "Error:" && -z $1) print " "$1}')\n"
+printf "$(newsboat -x reload print-unread | awk '{ if ($1 != "Error:" && -z $1 && $1 != 0) print " "$1}')\n"
