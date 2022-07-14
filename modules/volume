@@ -7,10 +7,6 @@ case $BLOCK_BUTTON in
 	3) notify-send -t 5000 -i $sound "$(pamixer --list-sinks | xargs | awk '{print $(NF-3),$(NF-2),$(NF-1),$NF}')";;
 esac
 
-# get-mute
-if [ $(pamixer --get-mute) = true ]; then printf " %s%s%s" "$f_RD" "mute " "$f_WT"; exit; fi
-
-# get-volume
 vol="$(pamixer --get-volume)"; if [$vol = ""]; then kill -39 $(pidof dwmblocks); exit; fi
 
 if   [ "$vol" -gt "70" ]; then icon=""
@@ -19,4 +15,7 @@ elif [ "$vol" -gt "0"  ]; then icon=""
 elif [ "$vol" -le "0"  ]; then icon=""
 fi
 
-printf "%s %s%s %s" "$icon" "$f_RD" "$vol%" "$f_WT"
+if [[ "$(cat /proc/asound/card*/* | grep -A30 'Headphone Playback Switch' | grep -A2 Pin-ctls)" =~ .*"0x20: IN".* ]]; then icon=""; fi
+if [ $(pamixer --get-mute) = true ]; then printf "$icon %s%s%s" "$RD" "mute" "$WT"; exit; fi
+
+printf "%s %s%s%s" "$icon" "$RD" "$vol" "$WT"
