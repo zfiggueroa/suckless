@@ -1,26 +1,22 @@
 #!/bin/sh
+
 # wallpaper
 ~/.fehbg &
 
 # dwmblocks
-export PATH="$PATH:$HOME/.dwm/modules"; dwmblocks &
+export PATH="$PATH:$HOME/.dwm/modules:$HOME/.local/bin"; dwmblocks &
 
-# lf
-/usr/local/bin/st -e lf &
-
-# st
+# terminal emulator
 /usr/local/bin/st -e /bin/sh --login &
+
+# file manager
+/usr/local/bin/st -e lf &
 
 # numlock
 numlockx &
 
-# loop
-#while true; do
-#	dwm 2>/dev/null
-#done
-
 # MOTD
-notify-send -t 10000 -u low "$(printf 'boot time: ' & systemd-analyze | awk '{print $16}')" &
+# notify-send -t 10000 -u low "$(printf 'boot time: ' & systemd-analyze | awk '{print $16}')" &
 
-# dwm
+# windows manager
 exec dwm
