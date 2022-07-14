@@ -11,10 +11,10 @@ Custom patched [suckless](https://suckless.org/) environment ready to build and 
 * ttf-font-awesome<br/>
 * dunst (notify-send)
 ## SCREENSHOTS
-<img src="https://i.ibb.co/G2gWXzs/Screenshot-2022-01-21-19-54-16.png" width=70% height=70%>
-<img src="https://i.ibb.co/7X0RCbx/Screenshot-2022-01-21-19-03-02.png" width=70% height=70%>
-<img src="https://i.ibb.co/WfFsP0K/Screenshot-2022-01-21-19-53-15.png" width=70% height=70%>
-<img src="https://i.ibb.co/z27jxc4/Screenshot-2022-01-21-19-03-51.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-23-38.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-02.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-19.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-40.png" width=70% height=70%>
 
 ## INSTALL
 Save and run [this](https://raw.githubusercontent.com/zfiggueroa/.dwm/main/install.sh) install script (requires root privileges) or follow the instructions inside it.
