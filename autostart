@@ -6,7 +6,7 @@
 # dwmblocks
 export PATH="$PATH:$HOME/.dwm/modules:$HOME/.local/bin"; dwmblocks &
 
-# terminal emulator
+# tty emulator
 /usr/local/bin/st -e /bin/sh --login &
 
 # file manager
@@ -18,5 +18,5 @@ numlockx &
 # MOTD
 # notify-send -t 10000 -u low "$(printf 'boot time: ' & systemd-analyze | awk '{print $16}')" &
 
-# windows manager
+# window manager
 exec dwm
