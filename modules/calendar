@@ -2,9 +2,9 @@
 source resources
 
 case $BLOCK_BUTTON in
-	1) notify-send "$(timedatectl | grep 'Time zone' | xargs)";;
+	1) notify-send -i $calendar "$(timedatectl | grep 'Time zone' | xargs | awk '{print $1,$2,$3}')";;
 	2) st -e vim $0;;
 	3) notify-send "$(cal)";;
 esac
 
-printf " %s%s%s |  %s%s%s" "$f_YL" "$(date "+%a %m.%d.%Y")" "$f_WT" "$f_GN" "$(date "+%I:%M %p")" "$f_WT"
+printf " %s%s%s |  %s%s%s" "$YL" "$(date "+%a %m.%d.%Y")" "$WT" "$GN" "$(date "+%I:%M %p")" "$WT"
