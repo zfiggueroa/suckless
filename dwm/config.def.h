@@ -4,26 +4,26 @@
 
 // appearance
 static const unsigned int borderpx	= 0;	// border pixel of windows
-static const unsigned int gappx		= 5;	// gaps between windows
+static const unsigned int gappx		= 10;	// gaps between windows
 static const unsigned int snap		= 32;	// snap pixel
 static const int showbar			= 1;	// 0 means no bar
 static const int topbar				= 1;	// 0 means bottom bar
-static const char *fonts[]			= {"Font Awesome 5 Free:style=Solid:pixelsize=10:antialias=true","monospace:size=10"};
+static const char *fonts[]			= {"monospace:size=10","Font Awesome 6 Free:style=Solid:pixelsize=10:antialias=true"};
 static const char dmenufont[]		= "monospace:size=10";
-static const char col_gray1[]		= "#222222";
-static const char col_gray2[]		= "#444444";
+static const char col_gray1[]		= "#202020";
+static const char col_gray2[]		= "#272727";
 static const char col_gray3[]		= "#ffffff";
 static const char col_gray4[]		= "#ffffff";
-static const char col_cyan[]		= "#5895ad";
+static const char col_cyan[]		= "#8db4d1";
 static const char *colors[][3]		= {
 	//				 fg			bg		   border
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-// tagging	https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=solid&m=free
+// tagging	https://fontawesome.com/search?m=free&s=solid%2Cbrands
 
-static const char *tags[] = { "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "","","","","","","","",""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -31,19 +31,23 @@ static const Rule rules[] = {
 	* WM_NAME(STRING) = title
 	* class			instance	title			mask		switch	isfloating	 monitor */
 	{ "st",			NULL,		"lf",			1 << 1,		1,		0,			-1 },
+	{ "Pcmanfm",	NULL,		NULL,			1 << 1,		1,		0,			-1 },
 	{ "feh",		NULL,		NULL,			1 << 1,		1,		0,			-1 },
-	{ "st",			NULL, 		"cmus",			1 << 2,		1,		0,			-1 },
-	{ "mpv",		NULL,		NULL,			1 << 3,		1,		1,			-1 },
+	{ "mpv",		NULL,		NULL,			1 << 2,		1,		1,			-1 },
+	{ "st",			NULL, 		"cmus",			1 << 3,		1,		0,			-1 },
 	{ "retroarch",	NULL,		NULL,			1 << 4,		1,		0,			-1 },
 	{ NULL,			"Steam",	NULL,			1 << 4,		1,		0,			-1 },
 	{ "firefox",	NULL,		NULL,			1 << 5,		1,		0,			-1 },
-	{ NULL,			NULL, 		"BleachBit",	1 << 6,		1,		0,			-1 },
 	{ "st",			NULL,		"vim",			1 << 6,		1,		0,			-1 },
 	{ NULL,			"geany",	NULL,			1 << 6,		1,		0,			-1 },
-	{ "AQEMU",		NULL,		NULL,			1 << 6,		1,		0,			-1 },
-	{ "Qemu-",		NULL,		NULL,			1 << 7,		1,		0,			-1 },
-	{ "st",			NULL,		"newsboat",		1 << 7,		1,		0,			-1 },
+	{ NULL,			NULL, 		"BleachBit",	1 << 7,		1,		0,			-1 },
+	{ "AQEMU",		NULL,		NULL,			1 << 7,		1,		0,			-1 },
+	{ "Qemu-",		NULL,		NULL,			1 << 8,		1,		0,			-1 },
+	{ "st",			NULL,		"newsboat",		1 << 8,		1,		0,			-1 },
 	{ "st",			NULL,		"/bin/sh",		0,			1,		0,			-1 },
+	{ "CoreShot",	NULL,		NULL,			0,			0,		1,			-1 },
+	{ "SimpleScre",	NULL,		NULL,			0,			0,		1,			-1 },
+	{ "Nm-connect",	NULL,		NULL,			0,			0,		1,			-1 },
 };
 
 // layout(s)
@@ -84,6 +88,8 @@ static Key keys[] = {
 	{ MODKEY,				XK_F10,		spawn,			SHCMD("st -e cmus") },
 	{ MODKEY|ShiftMask,		XK_Return,	spawn,			SHCMD("st -e /bin/sh --login") },
 	{ 0,					XK_Print,	spawn,          SHCMD("coreshot") },
+	{ MODKEY,				XK_Print,	spawn,          SHCMD("simplescreenrecorder") },
+	{ MODKEY,				XK_space,	spawn,			SHCMD("dunstctl close-all") },
 	{ MODKEY,				XK_p,		spawn,			{.v = dmenucmd } },
 	{ MODKEY,				XK_b,		togglebar,		{0} },
 	{ MODKEY,				XK_j,		focusstack,		{.i = +1 } },
@@ -98,8 +104,8 @@ static Key keys[] = {
 	{ MODKEY,				XK_t,		setlayout,		{.v = &layouts[0]} },
 	{ MODKEY,				XK_f,		setlayout,		{.v = &layouts[1]} },
 	{ MODKEY,				XK_m,		setlayout,		{.v = &layouts[2]} },
-	{ MODKEY,				XK_space,	setlayout,		{0} },
-	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
+	//{ MODKEY,				XK_space,	setlayout,		{0} },
+	//{ MODKEY|ShiftMask,	XK_space,	togglefloating,	{0} },
 	{ MODKEY,				XK_0,		view,			{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,			{.ui = ~0 } },
 	{ MODKEY,				XK_comma,	focusmon,		{.i = -1 } },
