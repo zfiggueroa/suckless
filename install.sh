@@ -1,10 +1,10 @@
 #/bin/sh
 
 # clone repo
-cd $HOME/; git clone https://github.com/zfiggueroa/suckless; clear
+cd $HOME/; git clone https://github.com/zfiggueroa/Suckless; clear
 
 # rename
-mv $HOME/suckless/ $HOME/.suckless/
+mv $HOME/Suckless/ $HOME/.suckless/
 
 # dwm
 cd $HOME/.suckless/dwm
