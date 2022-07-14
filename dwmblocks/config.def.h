@@ -2,9 +2,10 @@ const Block blocks[] = {
 	// kill = n + 34
 	//BLOCK("nettraf",	1,		1),
 	BLOCK("news",		900,	2),
-	BLOCK("memory",		1,		3),
+	BLOCK("memory",		2,		3),
 	BLOCK("calendar",	60,		4),
 	BLOCK("volume",		0,		5),
+	BLOCK("internet",	5,		6),
 };
 
 // Maximum possible length of output from block, expressed in number of characters.
