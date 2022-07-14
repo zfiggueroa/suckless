@@ -4,7 +4,7 @@
 cd $HOME/; git clone https://github.com/zfiggueroa/Suckless; clear
 
 # rename
-mv $HOME/Suckless/ $HOME/.suckless/
+mv $HOME/suckless/ $HOME/.suckless/
 
 # dwm
 cd $HOME/.suckless/dwm
