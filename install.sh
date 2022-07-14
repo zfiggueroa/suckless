@@ -1,36 +1,39 @@
 #/bin/sh
 
 # clone repo
-cd $HOME/; git clone https://github.com/zfiggueroa/.dwm; clear
+cd $HOME/; git clone https://github.com/zfiggueroa/suckless; clear
+
+# rename
+mv $HOME/suckless/ $HOME/.suckless/
 
 # dwm
-cd $HOME/.dwm/dwm
+cd $HOME/.suckless/dwm
 sudo cp config.def.h config.h
 sudo make clean install
 
 # dmenu
-cd $HOME/.dwm/dmenu
+cd $HOME/.suckless/dmenu
 sudo cp config.def.h config.h
 sudo make clean install
 
 # dwmblocks
-cd $HOME/.dwm/dwmblocks
+cd $HOME/.suckless/dwmblocks
 sudo cp config.def.h config.h
 sudo make clean install
 
 # st
-cd $HOME/.dwm/st
+cd $HOME/.suckless/st
 sudo cp config.def.h config.h
 sudo make clean install
 
-# binaries
-cd $HOME/.dwm/modules/; ls | grep -v resources | grep -v readme.md | xargs -I {} chmod -R +x {}
+# modules
+cd $HOME/.suckless/modules/; ls | grep -v resources | grep -v readme.md | xargs -I {} chmod -R +x {}
 
 # xsession
-sudo mv $HOME/.dwm/xsession /usr/share/xsessions/dwm-session.desktop
+sudo mv $HOME/.suckless/xsession /usr/share/xsessions/dwm-session.desktop
 
 # autorun
-chmod +x $HOME/.dwm/autostart
+chmod +x $HOME/.suckless/autostart
 
 # notify user
-notify-send -t 0 "suckless install completed"
+notify-send -t 0 "suckless installation completed"
