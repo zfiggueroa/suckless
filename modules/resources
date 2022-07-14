@@ -1,22 +1,22 @@
-# foreground colors
+# Foreground Colors
 
-f_RD=^c#e8335a^
-f_WT=^c#ffffff^
-f_BL=^c#33cae8^
-f_GN=^c#33e84e^
-f_YL=^c#e8e233^
-f_OR=^c#e86c33^
+RD=^c#bf616a^
+WT=^c#ffffff^
+BL=^c#88c0d0^
+GN=^c#a3be8c^
+YL=^c#ebcb8b^
+OR=^c#e86c33^
 
-# background colors
+# Background Colors
 
-b_RD=^c#e8335a^
-b_WT=^c#ffffff^
-b_BL=^c#33cae8^
-b_GN=^c#33e84e^
-b_YL=^c#e8e233^
-b_OR=^c#e86c33^
+RD_=^c#e8335a^
+WT_=^c#ffffff^
+BL_=^c#33cae8^
+GN_=^c#33e84e^
+YL_=^c#e8e233^
+OR_=^c#e86c33^
 
-# dunst icons
+# Dunst Icons - https://www.flaticon.com/free-icons/notification-bell
 
 icons="$HOME/.config/dunst/icons"
 
@@ -25,3 +25,5 @@ warning=$icons/warning.png
 hdd=$icons/hdd.png
 wbag=$icons/wbag.png
 bell=$icons/notifications.png
+shield=$icons/shield.png
+calendar=$icons/calendar.png
