@@ -4,7 +4,7 @@
 ~/.fehbg &
 
 # dwmblocks
-export PATH="$PATH:$HOME/.dwm/modules:$HOME/.local/bin"; dwmblocks &
+export PATH="$PATH:$HOME/.suckless/modules:$HOME/.local/bin"; dwmblocks &
 
 # tty emulator
 /usr/local/bin/st -e /bin/sh --login &
