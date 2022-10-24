@@ -1,10 +1,10 @@
 #!/bin/sh
-source resources
+. resources
 
 case $BLOCK_BUTTON in
 	1) pamixer -t; kill -39 $(pidof dwmblocks);;
-	2) st -e vim $0;;
-	3) notify-send -t 5000 -i $sound "$(pamixer --list-sinks | xargs | awk '{print $(NF-3),$(NF-2),$(NF-1),$NF}')";;
+	2) st -e $EDITOR $0;;
+	3) dunstify -i alsamixergui -t 5000 -r 9537 -a volume "$(pamixer --list-sinks | xargs | awk '{print $(NF-3),$(NF-2),$(NF-1),$NF}')";;
 esac
 
 vol="$(pamixer --get-volume)"; if [$vol = ""]; then kill -39 $(pidof dwmblocks); exit; fi
@@ -15,7 +15,13 @@ elif [ "$vol" -gt "0"  ]; then icon=""
 elif [ "$vol" -le "0"  ]; then icon=""
 fi
 
-if [[ "$(cat /proc/asound/card*/* | grep -A30 'Headphone Playback Switch' | grep -A2 Pin-ctls)" =~ .*"0x20: IN".* ]]; then icon=""; fi
-if [ $(pamixer --get-mute) = true ]; then printf "$icon %s%s%s" "$RD" "mute" "$WT"; exit; fi
+if [ "$(cat /proc/asound/card*/* | grep -A30 'Headphone Playback Switch' | grep -A2 Pin-ctls)" != .*"0x20: IN".* ]; then icon=""; fi
 
-printf "%s %s%s%s" "$icon" "$RD" "$vol" "$WT"
+case $(pamixer --get-mute) in
+		true)
+		printf "%s %s%s%s" "$icon" "$RD" "mute" "$WT"
+		;;
+		false)
+		printf "%s %s%s%s" "$icon" "$RD" "$vol" "$WT"
+		;;
+esac; exit
