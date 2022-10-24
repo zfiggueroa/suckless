@@ -14,10 +14,10 @@
 | dunst            | Customizable and lightweight notification-daemon | [🔗](https://archlinux.org/packages/community/x86_64/dunst/)
 | ttf-font-awesome | Iconic font designed for Bootstrap               | [🔗](https://archlinux.org/packages/community/any/ttf-font-awesome/)
 ## 3. SCREENSHOTS
-<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-23-38.png" width=70% height=70%>
-<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-02.png" width=70% height=70%>
-<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-19.png" width=70% height=70%>
-<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-07-14_11-22-40.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-10-23_21-40-12.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-10-23_21-39-53.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-10-23_21-38-25.png" width=70% height=70%>
+<img src="https://github.com/zfiggueroa/suckless/blob/main/screenshots/Screenshot_2022-10-23_21-41-09.png" width=70% height=70%>
 
 ## 4. INSTALL
 Save and run [this](https://raw.githubusercontent.com/zfiggueroa/.dwm/main/install.sh) install script (requires root privileges) or follow the instructions inside it.
@@ -30,8 +30,9 @@ This build is focused to use a display manager instead of `xorg-xinit`, use xses
 Encoding=UTF-8
 Name=dwm
 Comment=Dynamic window manager
-Exec=/$HOME/.dwm/autostart
+Exec=/$HOME/.local/suckless/autostart
 Icon=dwm
+Type=XSession
 Type=XSession
 ```
 *recommended to install a [TUI display manager](https://github.com/nullgemm/ly) to keep a minimal desktop experience*
