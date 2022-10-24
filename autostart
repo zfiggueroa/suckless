@@ -4,19 +4,16 @@
 ~/.fehbg &
 
 # dwmblocks
-export PATH="$PATH:$HOME/.suckless/modules:$HOME/.local/bin"; dwmblocks &
+export PATH="$PATH:$HOME/.local/suckless/modules/:$HOME/.local/bin"; dwmblocks &
 
 # tty emulator
-/usr/local/bin/st -e /bin/sh --login &
+/usr/local/bin/st &
 
 # file manager
 /usr/local/bin/st -e lf &
 
 # numlock
 numlockx &
-
-# MOTD
-# notify-send -t 10000 -u low "$(printf 'boot time: ' & systemd-analyze | awk '{print $16}')" &
 
 # window manager
 exec dwm
