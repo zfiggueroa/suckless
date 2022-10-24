@@ -1,10 +1,10 @@
 #!/bin/sh
-source resources
+. resources
 
 case $BLOCK_BUTTON in
-	1) notify-send -i $calendar "$(timedatectl | grep 'Time zone' | xargs | awk '{print $1,$2,$3}')";;
-	2) st -e vim $0;;
-	3) notify-send "$(cal)";;
+	1) dunstify -i calendar -t 0 -r 2325 -a timezone "$(timedatectl | grep 'Time zone' | xargs | awk '{print $1,$2,$3}')";;
+	2) st -e $EDITOR $0;;
+	3) dunstify -i calendar -t 0 -r 5022 -a calendar "$(cal)";;
 esac
 
 printf " %s%s%s |  %s%s%s" "$YL" "$(date "+%a %m.%d.%Y")" "$WT" "$GN" "$(date "+%I:%M %p")" "$WT"
