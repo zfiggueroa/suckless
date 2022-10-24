@@ -1,0 +1,13 @@
+#!/bin/sh
+. resources
+
+case $BLOCK_BUTTON in
+	1) dunstify -i cs-network -t 5000 -r 2670 -a internet "Connection" "$(nmcli device status | grep -v -E 'lo|DEVICE' | xargs | awk '{print $1,$2,$3}')";;
+	2) st -e $EDITOR $0;;
+	3) nm-connection-editor;;
+esac
+
+vpn="$(sed "s/.*//" /sys/class/net/tun*/operstate)"
+con="$(sed "s/down//;s/up//" /sys/class/net/e*/operstate)"
+
+if [ $vpn = "" ]; then printf "$vpn \b" ;else printf "$con \b"; fi
