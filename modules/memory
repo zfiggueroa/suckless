@@ -1,10 +1,10 @@
 #!/bin/sh
-source resources
+. resources
 
 case $BLOCK_BUTTON in
 	1) st -e top;;
-	2) st -e vim $0;;
-	3) notify-send -t 5000 -i $hdd "Free disk" "$(df -h /home | tail -n 1 | awk '{print "Total: "$2, "Used: " $3}')";;
+	2) st -e $EDITOR $0;;
+	3) dunstify -i blivet-gui -t 5000 -r 3307 -a memory "Free disk" "$(df -h /home | tail -n 1 | awk '{print "Total: "$2, "Used: " $3}')";;
 esac
 
 printf " %s%s%s" "$BL" "$(free -h | grep Mem | awk '{print $3"/"$2}')" "$WT"
