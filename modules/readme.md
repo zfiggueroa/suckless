@@ -2,10 +2,10 @@
 Modules made from scratch:
 
 - [x] news
-- [x] clock
+- [x] calendar
 - [x] memory
 - [x] volume
-- [ ] nettraf
+- [x] internet
 
 ## 📰 NEWS FEED
 **Name:** news<br/>
@@ -62,16 +62,16 @@ Modules made from scratch:
 
 `{ MODKEY,				XK_F10,		spawn,			SHCMD("st -e cmus") },`
 
-## 🗺️ NETWORK TRAFFIC
-**Name:** nettraf<br/>
-**Dependencies:** none<br/>
+## 🗺️ NETWORK DEVICES
+**Name:** internet<br/>
+**Dependencies:** nm-connection-editor<br/>
 **Status:**<br/>
 ```diff
-+ Ported
++ Working
 ```
 **Usage:**<br/>
-* `Button1: downloaded data`
+* `Button1: show current connection`
 * `Button2: edit module`
-* `Button3: network-devices`
+* `Button3: edit network`
 
 *Every other module integrated still 'work in progress', im rewriting every module from scratch for official support.*
