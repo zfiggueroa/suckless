@@ -6,24 +6,3 @@ BL=^c#88c0d0^
 GN=^c#a3be8c^
 YL=^c#ebcb8b^
 OR=^c#e86c33^
-
-# Background Colors
-
-RD_=^c#e8335a^
-WT_=^c#ffffff^
-BL_=^c#33cae8^
-GN_=^c#33e84e^
-YL_=^c#e8e233^
-OR_=^c#e86c33^
-
-# Dunst Icons - https://www.flaticon.com/free-icons/notification-bell
-
-icons="$HOME/.config/dunst/icons"
-
-sound=$icons/sound.png
-warning=$icons/warning.png
-hdd=$icons/hdd.png
-wbag=$icons/wbag.png
-bell=$icons/notifications.png
-shield=$icons/shield.png
-calendar=$icons/calendar.png
